@@ -13,7 +13,7 @@ function component() {
   //加入图片
   var img=new Image();
   img.src=banner;
-  element.apppendChild(img);
+  element.appendChild(img);
   
   return element;
 }
