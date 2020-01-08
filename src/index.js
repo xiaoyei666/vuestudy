@@ -1,22 +1,17 @@
 
-import './style.css';
-import banner from './banner.jpg';
 import _ from 'lodash/lodash';
-import data from './data.xml';
+import printMe from './print.js';
 
 function component() {
   let element = document.createElement('div');
-
+  
   // lodash（目前通过一个 script 引入）对于执行这一行是必需的
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  //添加类样式
-  element.classList.add('hello');
-  //加入图片
-  var img=new Image();
-  img.src=banner;
-  element.appendChild(img);
   
-  console.log(data);
+  let btn = document.createElement('button');
+  btn.innerHTML = '点击这里，然后查看 console！';
+  btn.onclick = printMe;
+  element.appendChild(btn);
   
   return element;
 }
