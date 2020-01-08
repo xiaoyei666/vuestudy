@@ -2,6 +2,7 @@
 import './style.css';
 import banner from './banner.jpg';
 import _ from 'lodash/lodash';
+import data from './data.xml';
 
 function component() {
   let element = document.createElement('div');
@@ -14,6 +15,8 @@ function component() {
   var img=new Image();
   img.src=banner;
   element.appendChild(img);
+  
+  console.log(data);
   
   return element;
 }

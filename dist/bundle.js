@@ -91,9 +91,33 @@
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
   \*************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/css-loader/dist/cjs.js):\\nCssSyntaxError\\n\\n(4:14) Missed semicolon\\n\\n \\u001b[90m 2 | \\u001b[39m\\tfont-family\\u001b[33m:\\u001b[39m\\u001b[32m\\\"my-font\\\"\\u001b[39m\\u001b[33m;\\u001b[39m\\n \\u001b[90m 3 | \\u001b[39m\\tsrc\\u001b[33m:\\u001b[39m\\u001b[36murl\\u001b[39m\\u001b[36m(\\u001b[39m\\u001b[32m'./my-font.woff2'\\u001b[39m\\u001b[36m)\\u001b[39m \\u001b[36mformat\\u001b[39m\\u001b[36m(\\u001b[39m\\u001b[32m'woff2'\\u001b[39m\\u001b[36m)\\u001b[39m\\u001b[36m,url\\u001b[39m\\u001b[36m(\\u001b[39m\\u001b[32m'./my-font.woff'\\u001b[39m\\u001b[36m)\\u001b[39m \\u001b[36mformat\\u001b[39m\\u001b[36m(\\u001b[39m\\u001b[32m'woff'\\u001b[39m\\u001b[36m)\\u001b[39m\\u001b[33m;\\u001b[39m\\n\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 4 | \\u001b[39m\\tfont-weight\\u001b[33m:\\u001b[39m600,\\n \\u001b[90m   | \\u001b[39m\\t            \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\n \\u001b[90m 5 | \\u001b[39m\\tfont-style\\u001b[33m:\\u001b[39mnormal\\u001b[33m;\\u001b[39m\\n \\u001b[90m 6 | \\u001b[39m\\t\\n\");\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./my-font.woff2 */ \"./src/my-font.woff2\");\nvar ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(/*! ./my-font.woff */ \"./src/my-font.woff\");\nvar ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(/*! ./banner.jpg */ \"./src/banner.jpg\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\nvar ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);\nvar ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);\n// Module\nexports.push([module.i, \"@font-face{\\r\\n\\tfont-family:\\\"my-font\\\";\\r\\n\\tsrc:url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \") format('woff2'),url(\" + ___CSS_LOADER_URL_REPLACEMENT_1___ + \") format('woff');\\r\\n\\tfont-weight:600;\\r\\n\\tfont-style:normal;\\r\\n\\t\\r\\n}\\r\\n\\r\\n.hello{\\r\\n\\tcolor:red;\\r\\n\\tfont-family:'my-font';\\r\\n\\tbackground:url(\" + ___CSS_LOADER_URL_REPLACEMENT_2___ + \");\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    for (var i = 0; i < modules.length; i++) {\n      var item = [].concat(modules[i]);\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/getUrl.js?");
 
 /***/ }),
 
@@ -154,6 +178,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
+/***/ "./src/data.xml":
+/*!**********************!*\
+  !*** ./src/data.xml ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = {\"note\":{\"to\":[\"Mary\"],\"from\":[\"John\"],\"heading\":[\"Reminder\"],\"body\":[\"Call Cindy on Tuesday\"]}}\n\n//# sourceURL=webpack:///./src/data.xml?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -162,7 +197,31 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _banner_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./banner.jpg */ \"./src/banner.jpg\");\n/* harmony import */ var lodash_lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash_lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_lodash__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\n\r\nfunction component() {\r\n  let element = document.createElement('div');\r\n\r\n  // lodash（目前通过一个 script 引入）对于执行这一行是必需的\r\n  element.innerHTML = lodash_lodash__WEBPACK_IMPORTED_MODULE_2___default.a.join(['Hello', 'webpack'], ' ');\r\n  //添加类样式\r\n  element.classList.add('hello');\r\n  //加入图片\r\n  var img=new Image();\r\n  img.src=_banner_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n  element.appendChild(img);\r\n  \r\n  return element;\r\n}\r\n\r\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _banner_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./banner.jpg */ \"./src/banner.jpg\");\n/* harmony import */ var lodash_lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash_lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_lodash__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _data_xml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data.xml */ \"./src/data.xml\");\n/* harmony import */ var _data_xml__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_data_xml__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\r\n\r\n\r\nfunction component() {\r\n  let element = document.createElement('div');\r\n\r\n  // lodash（目前通过一个 script 引入）对于执行这一行是必需的\r\n  element.innerHTML = lodash_lodash__WEBPACK_IMPORTED_MODULE_2___default.a.join(['Hello', 'webpack'], ' ');\r\n  //添加类样式\r\n  element.classList.add('hello');\r\n  //加入图片\r\n  var img=new Image();\r\n  img.src=_banner_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\r\n  element.appendChild(img);\r\n  \r\n  console.log(_data_xml__WEBPACK_IMPORTED_MODULE_3___default.a);\r\n  \r\n  return element;\r\n}\r\n\r\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/my-font.woff":
+/*!**************************!*\
+  !*** ./src/my-font.woff ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"fa2772327f55d8198301fdb8bcfc8158.woff\");\n\n//# sourceURL=webpack:///./src/my-font.woff?");
+
+/***/ }),
+
+/***/ "./src/my-font.woff2":
+/*!***************************!*\
+  !*** ./src/my-font.woff2 ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"448c34a56d699c29117adc64c43affeb.woff2\");\n\n//# sourceURL=webpack:///./src/my-font.woff2?");
 
 /***/ }),
 
